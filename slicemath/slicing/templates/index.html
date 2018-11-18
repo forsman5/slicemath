@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<form action="{% url 'newSession'%}" method="GET">
+  <label for="nameField">Your Name</label>
+   <input type="text" class="form-control" id="nameField" placeholder="Dwayne Haskins">
+  <button type="submit" class="btn btn-primary">Go to other view</button>
+</form>
+
+
+{% endblock %}
