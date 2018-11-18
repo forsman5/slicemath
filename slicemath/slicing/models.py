@@ -27,16 +27,9 @@ crustChoices = (
 
 
 )
-# Create your models here.
-<<<<<<< HEAD
-class Sessions(models.Model):
 
+class Sessions(models.Model):
     pass
-=======
-#class Sessions(models.Model):
-    # many Members
-    # many pizzas
->>>>>>> 927c2f8abc5ee2bec4eb3043329f4272f3928a8f
 
 # Members
 class Member(member.Model):
