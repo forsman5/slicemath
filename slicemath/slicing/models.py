@@ -1,31 +1,58 @@
 from django.db import models
 
+toppingChoices = (
+    ('Peperroni'),
+    ('Sausage'),
+    ('Onions'),
+    ('Peppers'),
+    ('Mushrooms'),
+    ('Pineapple'),
+)
+
+sauceChoices = (
+    ('Marinara'),
+    ('Alfredo'),
+)
+sizeChoices = (
+    ('Small'),
+    ('Medium'),
+    ('Large'),
+    ('Xtra-Large'),
+)
+crustChoices = (
+    ('Thin')
+    ('Reguler')
+    ('Thick')
+    ('Garlic Crusted')
+
+
+)
 # Create your models here.
 class Sessions(models.Model):
-    # many Members
-    # many pizzas
+
+    pass
 
 # Members
+class Member(member.Model):
+    session = models.ForeignKey(Sessions, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
     # for every member, one session
 
-# pizzas
-    # many Toppings
-    # one Sauce
-    # one crust
-    # one session
+class Pizza(models.Model):
+    sauce = models.ForeignKey(Sauce, on_delete=models.CASCADE)
+    crust = models.ForiegnKey(Crust, on_delete=models.CASCADE)
+    size = models.ForeignKey(Size, on_delete=models.CASCADE)
+    session = models.ForeignKey(Sessions, on_delete=models.CASCADE)
 
-# Toppings
-    # name
-    # many pizzas
+class Topping(model.Model):
+    name = models.CharField(choices=toppingChoices)
+    pizzas = models.ManyToManyField(Pizza, related_name="toppings")
 
-# Crusts
-    # name
-    # many pizzas
+class Crust(model.Model):
+    name = models.CharField(choices=crustChoices)
 
-# Sauces
-    # name
-    # many pizzas
+class Sauce(model.Model):
+    name = models.CharField(choices=sauceChoices)
 
-# Sizes
-    # name
-    # many pizzas
+class Size(model.Model):
+    name = models.CharField(choices=sizeChoices)
