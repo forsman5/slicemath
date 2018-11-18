@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Sessions(models.Model):
+#class Sessions(models.Model):
     # many Members
     # many pizzas
 
