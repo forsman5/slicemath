@@ -10,6 +10,7 @@ class Member(models.Model):
     saucePref = models.ForeignKey(Sauce)
     crustPref = models.ForeignKey(Crust)
 
+
 class Crust(models.Model):
     crustChoices = (
         ('S', 'Thin'),
