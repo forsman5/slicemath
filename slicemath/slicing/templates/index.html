@@ -5,6 +5,6 @@
 <form action="{% url 'index' %}" method="post">
     {% csrf_token %}
     {{ createForm }}
-    <input class='btn btn-primary' type="submit" value="Create a new Session">
+    <input class='btn btn-primary' type="submit" name="createForm" value="Create a new Session">
 </form>
 {% endblock %}
