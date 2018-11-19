@@ -2,11 +2,16 @@
 {% load static %}
 
 {% block content %}
-<form action="{% url 'newSession'%}" method="GET">
-  <label for="nameField">Your Name</label>
-   <input type="text" class="form-control" id="nameField" placeholder="Dwayne Haskins">
-  <button type="submit" class="btn btn-primary">Go to other view</button>
-</form>
+<div class="jumbotron align-items-center justify-content-center bg-primary">
+  <h1 class="display-4">SliceMath</h1>
+  <p class="lead">Deciding on pizza toppings sucks. We are here to fix that.</p>
+  <hr class="my-4">
+  <form action="{% url 'newSession'%}" method="GET">
+    <label for="nameField">Your Name</label>
+     <input type="text" class="form-control" id="nameField" placeholder="Dwayne Haskins">
+    <button type="submit" class="btn btn-warning topMargin">Go to other view</button>
+  </form>
+</div>
 
 
 {% endblock %}
