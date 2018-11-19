@@ -17,7 +17,7 @@
   <form class = "sneaky" id = "joinForm" action="{% url 'index' %}" method="post">
     {% csrf_token %}
     {{ joinForm }}
-    <input class='btn btn-primary topMargin btn-warning' id = "submit" name = "createForm" type="submit" value="Join a Session">
+    <input class='btn btn-primary topMargin btn-warning' id = "submit" name = "joinForm" type="submit" value="Join a Session">
   </form>
 </div>
 </div>
