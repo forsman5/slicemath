@@ -51,8 +51,8 @@ class Topping(models.Model):
     pizzas = models.ManyToManyField(Pizza, related_name="toppings")
 
 class Member(models.Model):
-    session = models.ForeignKey(Session, on_delete=models.CASCADE)
+    session = models.ForeignKey(Session, on_delete=models.CASCADE, related_name="members")
     name = models.CharField(max_length=50)
     toppingPref = models.ManyToManyField(Topping)
-    saucePref = models.ForeignKey(Sauce, on_delete=models.CASCADE)
-    crustPref = models.ForeignKey(Crust, on_delete=models.CASCADE)
+    saucePref = models.ForeignKey(Sauce, on_delete=models.CASCADE, null=True)
+    crustPref = models.ForeignKey(Crust, on_delete=models.CASCADE, null=True)

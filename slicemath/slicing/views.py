@@ -32,13 +32,13 @@ def index(request):
             # check whether it's valid:
             if form.is_valid():
                 # read the session from db
-                session = Session.objects.get(pk=form.cleaned_data['sessionCode'])
+                session = models.Session.objects.get(pk=form.cleaned_data['sessionCode'])
 
                 # create the new member of that session
                 member = models.Member.objects.create(name=form.cleaned_data['name'], session=session)
 
                 # return the rendered, new session page
-                return HttpResponseRedirect(reverse('session', args = [sessionId]))
+                return HttpResponseRedirect(reverse('session', args = [session.id]))
 
             else:
                 print("FAIL2")

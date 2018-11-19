@@ -2,5 +2,10 @@
 {% load static %}
 
 {% block content %}
-<p> lol </p>
+<ul class="list-group">
+  <li class="list-group-item active">People in this Session</li>
+  {% for person in session.members.all %}
+    <li class="list-group-item">{{person.name}}</li>
+  {% endfor %}
+</ul>
 {% endblock %}
