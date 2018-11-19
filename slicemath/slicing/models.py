@@ -7,6 +7,7 @@ class Member(models.Model):
     session = models.ForeignKey(Session, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
 
+
 class Crust(models.Model):
     crustChoices = (
         ('S', 'Thin'),
