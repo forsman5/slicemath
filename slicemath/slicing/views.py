@@ -5,22 +5,40 @@ from . import forms
 
 def index(request):
     if request.method == 'POST' or request.method == 'post':
-        # create a form instance and populate it with data from the request:
-        form = forms.NewSessionForm(request.POST)
+        if 'createForm' in request.POST:
+            # create a form instance and populate it with data from the request:
+            form = forms.NewSessionForm(request.POST)
 
-        # check whether it's valid:
-        if form.is_valid():
-            # create a new session
-            sessionId = 0
+            # check whether it's valid:
+            if form.is_valid():
+                # create a new session
+                sessionId = 0
 
-            # create the new member of that session
+                # create the new member of that session
 
-            # return the rendered, new session page
-            return HttpResponseRedirect(reverse('session', args = [sessionId]))
+                # return the rendered, new session page
+                return HttpResponseRedirect(reverse('session', args = [sessionId]))
 
+            else:
+                # TODO: print an error and request resumbit
+                pass
         else:
-            # TODO: print an error and request resumbit
-            pass
+            # joinForm
+            form = forms.JoinSessionForm(request.POST)
+
+            # check whether it's valid:
+            if form.is_valid():
+                # read the session from db
+                sessionId = 0
+
+                # create the new member of that session
+
+                # return the rendered, new session page
+                return HttpResponseRedirect(reverse('session', args = [sessionId]))
+
+            else:
+                # TODO: print an error and request resumbit
+                pass
     else:
         joinForm = forms.JoinSessionForm()
         createSession = forms.NewSessionForm()
