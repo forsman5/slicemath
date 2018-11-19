@@ -6,6 +6,9 @@ class Session(models.Model):
 class Member(models.Model):
     session = models.ForeignKey(Session, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
+    toppingPref = models.ManyToManyField(Topping)
+    saucePref = models.ForeignKey(Sauce)
+    crustPref = models.ForeignKey(Crust)
 
 class Crust(models.Model):
     crustChoices = (
