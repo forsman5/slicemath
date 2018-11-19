@@ -3,14 +3,6 @@ from django.db import models
 class Session(models.Model):
     pass
 
-class Member(models.Model):
-    session = models.ForeignKey(Session, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50)
-    toppingPref = models.ManyToManyField(Topping)
-    saucePref = models.ForeignKey(Sauce)
-    crustPref = models.ForeignKey(Crust)
-
-
 class Crust(models.Model):
     crustChoices = (
         ('S', 'Thin'),
@@ -57,3 +49,10 @@ class Topping(models.Model):
 
     name = models.CharField(max_length=50, choices=toppingChoices)
     pizzas = models.ManyToManyField(Pizza, related_name="toppings")
+
+class Member(models.Model):
+    session = models.ForeignKey(Session, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
+    toppingPref = models.ManyToManyField(Topping)
+    saucePref = models.ForeignKey(Sauce, on_delete=models.CASCADE)
+    crustPref = models.ForeignKey(Crust, on_delete=models.CASCADE)
