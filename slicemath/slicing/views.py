@@ -22,9 +22,10 @@ def index(request):
             # TODO: print an error and request resumbit
             pass
     else:
+        joinForm = forms.JoinSessionForm()
         createSession = forms.NewSessionForm()
 
-        return render(request, 'index.html', {'form': createSession})
+        return render(request, 'index.html', {'createForm': createSession, 'joinForm': joinForm})
 
 def session(request, id):
     # get session from db

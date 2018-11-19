@@ -4,7 +4,7 @@
 {% block content %}
 <form action="{% url 'index' %}" method="post">
     {% csrf_token %}
-    {{ form }}
+    {{ createForm }}
     <input class='btn btn-primary' type="submit" value="Create a new Session">
 </form>
 {% endblock %}
