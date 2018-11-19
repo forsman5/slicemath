@@ -5,3 +5,9 @@
 .landingButtons{
   display:inline-block;
 }
+.sneaky{
+  display: none;
+}
+.active{
+  display: block;
+}
