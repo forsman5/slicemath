@@ -6,11 +6,15 @@
   <h1 class="display-4">SliceMath</h1>
   <p class="lead">Deciding on pizza toppings sucks. We are here to fix that.</p>
   <hr class="my-4">
-  <form action="{% url 'newSession'%}" method="GET">
-    <label for="nameField">Your Name</label>
-     <input type="text" class="form-control" id="nameField" placeholder="Dwayne Haskins">
-    <button type="submit" class="btn btn-warning topMargin">Go to other view</button>
+  <button type="button" class="btn btn-warning landingButtons">Create Session</button>
+  <button type="button" class="btn btn-warning landingButtons">Join Session</button>
+<div>
+  <form action="{% url 'newSession' %}" method="post">
+    {% csrf_token %}
+    {{ createForm }}
+    <input class='btn btn-primary topMargin btn-warning' id = "submit" name = "createForm" type="submit" value="Create a new Session">
   </form>
+</div>
 </div>
 
 

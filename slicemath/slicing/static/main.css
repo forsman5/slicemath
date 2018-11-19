@@ -2,3 +2,6 @@
 .topMargin{
   margin-top:10px;
 }
+.landingButtons{
+  display:inline-block;
+}
