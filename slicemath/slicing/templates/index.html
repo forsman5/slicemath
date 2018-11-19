@@ -2,9 +2,25 @@
 {% load static %}
 
 {% block content %}
-<form action="{% url 'index' %}" method="post">
+<div class="jumbotron align-items-center justify-content-center bg-primary">
+  <h1 class="display-4">SliceMath</h1>
+  <p class="lead">Deciding on pizza toppings sucks. We are here to fix that.</p>
+  <hr class="my-4">
+  <button type="button" id = "newButton" class="btn btn-warning landingButtons">Create Session</button>
+  <button type="button" id = "joinButton" class="btn btn-warning landingButtons">Join Session</button>
+<div>
+  <form class = "sneaky" id = "newForm" action="{% url 'index' %}" method="post">
     {% csrf_token %}
     {{ createForm }}
-    <input class='btn btn-primary' type="submit" name="createForm" value="Create a new Session">
-</form>
+    <input class='btn btn-primary topMargin btn-warning' id = "submit" name = "createForm" type="submit" value="Create a new Session">
+  </form>
+  <form class = "sneaky" id = "joinForm" action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    {{ joinForm }}
+    <input class='btn btn-primary topMargin btn-warning' id = "submit" name = "joinForm" type="submit" value="Join a Session">
+  </form>
+</div>
+</div>
+
+
 {% endblock %}

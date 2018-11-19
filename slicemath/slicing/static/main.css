@@ -1,0 +1,13 @@
+
+.topMargin{
+  margin-top:10px;
+}
+.landingButtons{
+  display:inline-block;
+}
+.sneaky{
+  display: none;
+}
+.active{
+  display: block;
+}
